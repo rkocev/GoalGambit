@@ -13,12 +13,12 @@ public class UpdateScore : MonoBehaviour
         // Get the Text component from the game object
         textObject = GetComponent<Text>();
 
-        UnityEngine.Debug.Log("Initial textObject " + textObject.text);
+        // UnityEngine.Debug.Log("Initial textObject " + textObject.text);
 
         // Update the text value
         textObject.text = "0";
 
-        UnityEngine.Debug.Log("Updated textObject " + textObject.text);
+        // UnityEngine.Debug.Log("Updated textObject " + textObject.text);
     }
 
     public void UpdatePlayerScore(int score){
