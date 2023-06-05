@@ -5,11 +5,19 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public float Force;
+    public Transform target;
 
-    void OnMouseDown()
+    void Update()
     {
-        GetComponent<Rigidbody>().AddForce(Vector3.forward * Force, ForceMode.Impulse);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            shoot();
+        }
     }
 
-    
+    void shoot()
+    {
+        Vector3 Shoot = (target.transform.position - this.transform.position).normalized;
+        GetComponent<Rigidbody>().AddForce(Shoot * Force + new Vector3(0, 3f, 0), ForceMode.Impulse);
+    }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Ball
   - soccer_ball
   - GoalLine
+  - Target
   layers:
   - Default
   - TransparentFX
