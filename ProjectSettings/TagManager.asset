@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Wall
   - Ball
+  - soccer_ball
+  - GoalLine
   layers:
   - Default
   - TransparentFX
