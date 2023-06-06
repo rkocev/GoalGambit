@@ -29,12 +29,7 @@ Getting Started
 
 To get started with the Augmented Reality Goalkeeper Game, follow these steps:
 
-*
-*
-*
+* Find the QuickStart folder
+* Find a build for your OS
+* Run it using xCode
 
-If you have any questions, suggestions, or feedback regarding the Augmented Reality Goalkeeper Game, please feel free to contact the project maintainers:
-
-Project maintainer: [Your Name]
-Email: [your-email@example.com]
-We hope you enjoy playing the
