@@ -4,9 +4,7 @@ Welcome to the Augmented Reality Goalkeeper Game! This is a simple two-player ga
 
 ## Gameplay
 
-The objective of the game is for the goal-scoring player to shoot the ball past the goalkeeper player and score as many goals as possible within a given time limit. The goalkeeper player's task is to block the shots and prevent the ball from entering the goal.
-
-The game utilizes augmented reality to create an immersive experience. Players can see the virtual goal and ball overlaid onto the real-world environment through the AR display. The players interact with the game by using specific controls.
+The objective of the game is for the goal-scoring player to shoot the ball past the goalkeeper player and score 5 goals first instead of the opponent in order to win. The goalkeeper player's task is to block the shots and prevent the ball from entering the goal.
 
 ## Controls
 
@@ -27,7 +25,7 @@ The goal-scoring player should use these controls to aim and adjust the directio
 
 Getting Started
 
-To get started with the Augmented Reality Goalkeeper Game, follow these steps:
+To get started with the game Goal Gambit, follow these steps:
 
 * Find the QuickStart folder
 * Find a build for your OS
