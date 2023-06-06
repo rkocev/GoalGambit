@@ -21,7 +21,6 @@ public class GoalLineController : MonoBehaviour
 
     private Text winnerText;
     
-    // public Ball ball;
     // Start is called before the first frame update
     void Start()
     {
@@ -79,18 +78,6 @@ public class GoalLineController : MonoBehaviour
                 UnityEngine.Debug.Log("Player 2 wins with a score of " + player2Score);
                 EndGame();
             }
-            else
-            {
-                isFirstPlayerTurn = !isFirstPlayerTurn;
-                // Wait for 1 second then reset the ball
-                // StartCoroutine(WaitForBallReset());
-                
-                
-
-                player1Turn.text = isFirstPlayerTurn ? "Player 1" : "";
-                player2Turn.text = isFirstPlayerTurn ? "" : "Player 2";
-                UnityEngine.Debug.Log("Switching to " + (isFirstPlayerTurn ? "Player 1" : "Player 2") + "'s turn.");
-            }
         }
     }
 
@@ -103,7 +90,27 @@ public class GoalLineController : MonoBehaviour
         player2Turn.text = "";
 
         winnerText.text = "Winner is\n" + (winner == 1 ? "Player 1" : "Player 2") + "!";
-        // TODO: we should display the winner or perform other end-game actions
 
+
+        // Disable the ball
+        // GameObject.Find("Icosphere").GetComponent<Rigidbody>().isKinematic = true;
+        // GameObject.Find("Icosphere").GetComponent<Rigidbody>().useGravity = false;
+        // GameObject.Find("Icosphere").GetComponent<Rigidbody>().velocity = Vector3.zero;
+        // GameObject.Find("Icosphere").GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
+
+        // // Make a reset button visible
+        // GameObject.Find("ResetButton").GetComponent<Button>().interactable = true;
+
+
+
+    }
+
+    public void ChangePlayerTurn()
+    {
+        UnityEngine.Debug.Log("Switching to " + (isFirstPlayerTurn ? "Player 1" : "Player 2") + "'s turn.");
+        isFirstPlayerTurn = !isFirstPlayerTurn;
+        player1Turn.text = isFirstPlayerTurn ? "Player 1" : "";
+        player2Turn.text = isFirstPlayerTurn ? "" : "Player 2";
     }
 }
