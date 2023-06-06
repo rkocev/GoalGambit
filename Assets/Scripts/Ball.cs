@@ -28,10 +28,26 @@ public class Ball : MonoBehaviour
         }
     }
 
+    // void shoot()
+    // {
+    //     Vector3 Shoot = (target.transform.position - this.transform.position).normalized;
+    //     GetComponent<Rigidbody>().AddForce(Shoot * Force + new Vector3(0, 3f, 0), ForceMode.Impulse);
+    // }
+
+    // Function that shoots the ball towards
+
     void shoot()
     {
         Vector3 Shoot = (target.transform.position - this.transform.position).normalized;
         GetComponent<Rigidbody>().AddForce(Shoot * Force + new Vector3(0, 3f, 0), ForceMode.Impulse);
+
+        StartCoroutine(WaitForBallReset());
+    }
+
+    IEnumerator WaitForBallReset()
+    {
+        yield return new WaitForSeconds(2);
+        ResetBall();
     }
 
     public void ResetBall()

@@ -21,27 +21,20 @@ public class GoalLineController : MonoBehaviour
 
     private Text winnerText;
     
-    public Ball ball;
+    // public Ball ball;
     // Start is called before the first frame update
     void Start()
     {
-        // Find the game object with the UpdateText script attached
-        GameObject textPlayer1 = GameObject.Find("Player1-Score");
-        GameObject textPlayer2 = GameObject.Find("Player2-Score");
 
         // Get the UpdateText script component from the found game object
-        updateTextPlayer1 = textPlayer1.GetComponent<UpdateScore>();
-        updateTextPlayer2 = textPlayer2.GetComponent<UpdateScore>();
+        updateTextPlayer1 = GameObject.Find("Player1-Score").GetComponent<UpdateScore>();
+        updateTextPlayer2 = GameObject.Find("Player2-Score").GetComponent<UpdateScore>();
 
-        GameObject player1 = GameObject.Find("Player1");
-        GameObject player2 = GameObject.Find("Player2");
 
-        player1Turn = player1.GetComponent<Text>();
-        player2Turn = player2.GetComponent<Text>();
+        player1Turn = GameObject.Find("Player1").GetComponent<Text>();
+        player2Turn = GameObject.Find("Player2").GetComponent<Text>();
         player1Turn.text = "Player 1";
         player2Turn.text = "";
-
-        ball = GameObject.Find("Icosphere").GetComponent<Ball>();
 
         winnerText = GameObject.Find("Winner").GetComponent<Text>();
         winnerText.text = "";
@@ -90,7 +83,7 @@ public class GoalLineController : MonoBehaviour
             {
                 isFirstPlayerTurn = !isFirstPlayerTurn;
                 // Wait for 1 second then reset the ball
-                StartCoroutine(WaitForBallReset());
+                // StartCoroutine(WaitForBallReset());
                 
                 
 
@@ -112,11 +105,5 @@ public class GoalLineController : MonoBehaviour
         winnerText.text = "Winner is\n" + (winner == 1 ? "Player 1" : "Player 2") + "!";
         // TODO: we should display the winner or perform other end-game actions
 
-    }
-
-    IEnumerator WaitForBallReset()
-    {
-        yield return new WaitForSeconds(2);
-        ball.ResetBall();
     }
 }
